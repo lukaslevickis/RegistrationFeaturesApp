@@ -4,4 +4,20 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="MongoDB.Driver" />
+    <None Remove="DAL\" />
+    <None Remove="DAL\Collections\" />
+    <None Remove="DAL\Repositories\" />
+    <None Remove="Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="MongoDB.Driver" Version="2.13.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DAL\" />
+    <Folder Include="DAL\Collections\" />
+    <Folder Include="DAL\Repositories\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
 </Project>
