@@ -1,33 +1,22 @@
 ﻿<Properties StartupConfiguration="{18CC9D7A-874C-4305-9A85-9216279F157A}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Backend/Services/FormService.cs">
-    <Files>
-      <File FileName="Backend/Startup.cs" Line="1" Column="1" />
-      <File FileName="Backend/Controllers/HomeController.cs" Line="28" Column="26" />
-      <File FileName="Backend/DAL/Repositories/MongoRepository.cs" Line="20" Column="21" />
-      <File FileName="Backend/DAL/Repositories/IMongoRepository.cs" Line="8" Column="11" />
-      <File FileName="Backend/Services/FormService.cs" Line="18" Column="20" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Backend" expanded="True">
             <Node name="Backend" expanded="True">
-              <Node name="Controllers" expanded="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="HomeController.cs" selected="True" />
+              </Node>
               <Node name="DAL" expanded="True">
                 <Node name="Collections" expanded="True" />
                 <Node name="Repositories" expanded="True" />
               </Node>
-              <Node name="Services" expanded="True">
-                <Node name="FormService.cs" selected="True" />
-              </Node>
+              <Node name="Models" expanded="True" />
+              <Node name="Properties" expanded="True" />
+              <Node name="Services" expanded="True" />
             </Node>
           </Node>
-        </State>
-      </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State>
-          <Value>dbSet</Value>
-          <Value>entity</Value>
         </State>
       </Pad>
     </Pads>
@@ -38,9 +27,7 @@
   </MonoDevelop.Ide.DebuggingService.PinnedWatches>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/lukaslevickis/Desktop/full stack/BIT/vsapps/angular/RegistrationFeaturesApp/Backend/Backend/Controllers/HomeController.cs" relfile="Backend/Controllers/HomeController.cs" line="24" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.Backend PreferredExecutionTarget="/Applications/Google Chrome.app" />

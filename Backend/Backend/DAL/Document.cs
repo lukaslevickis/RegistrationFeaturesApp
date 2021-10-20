@@ -1,12 +1,13 @@
 ﻿using System;
 using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace Backend.DAL
 {
-    public abstract class Document : IDocument
+    public abstract class Document
     {
-        public ObjectId Id { get; set; }
-
-        public DateTime CreatedAt => Id.CreationTime;
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string Id { get; set; }
     }
 }

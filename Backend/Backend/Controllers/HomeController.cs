@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Backend.DAL.Collections;
-using Backend.DAL.Repositories;
+using Backend.Models;
 using Backend.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,36 +20,34 @@ namespace Backend.Controllers
         [HttpGet]
         public async Task<ActionResult> Get()
         {
-            var aa = await _formService.GetAsync();
-            return Ok();
+            return Ok(await _formService.GetAsync());
         }
 
         // GET api/values/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult> GetById(int id)
+        [HttpGet("{id:length(24)}")]
+        public async Task<ActionResult<Registration>> GetById(string id)
         {
-            return Ok();
-        }
+            var form = await _formService.GetByIdAsync(id);
+            if (form == null)
+            {
+                return NotFound();
+            }
 
-        // POST api/values
-        [HttpPost]
-        public async Task<IActionResult> Create()//[FromBody] EmployeeCreationDto employee)
-        {
-            return NoContent();
+            return Ok(await _formService.GetByIdAsync(id));
         }
 
         // PUT api/values/5
-        [HttpPut("{id}")]
-        public async Task<IActionResult> Put(int id)//, [FromBody] EmployeeEditDto employee)
+        [HttpPut("{id:length(24)}")]
+        public async Task<IActionResult> Put(string id, [FromBody] FormModel model)
         {
+            Registration item = await _formService.GetByIdAsync(id);
 
-            return NoContent();
-        }
+            if (item == null)
+            {
+                return NotFound();
+            }
 
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
-        {
+            _formService.Update(id, item, model);
 
             return NoContent();
         }
