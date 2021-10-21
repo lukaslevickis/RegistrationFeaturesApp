@@ -1,0 +1,36 @@
+<!-- <form [formGroup]="employeeForm"> -->
+
+    <!-- <div>
+      <label for="firstName">
+        First Name 
+      </label>
+      <input id="firstName" type="text" formControlName="firstName" [(ngModel)]="firstName">
+    </div>
+  
+    <div>
+      <label for="lastName">
+        Last Name 
+      </label>
+      <input id="lastName" type="text" formControlName="lastName" [(ngModel)]="lastName">
+    </div>
+    <div>
+      <label for="sex">Select your sex: </label>
+      <select formControlName="sex" id="sex" [(ngModel)]="sex">
+        <option value="0">Male</option>
+        <option value="1">Female</option>
+        <option value="2">Prefer not to say</option>
+      </select>
+    </div> -->
+
+
+      <tr class="blck" *ngFor="let question of questions">
+        <label for="sex">{{question.name}} </label>
+        <select>
+            <option [selected]="question.answerId == option.id" *ngFor="let option of question.options" value="{{option.id}}">{{option.name}}</option>
+          </select>
+      </tr>
+    
+    <!-- <div *ngIf="update; then thenBlock else elseBlock"></div>
+    <ng-template #thenBlock><button class="update2 btn-primary" (click)="updateEmployee()">update</button></ng-template>
+    <ng-template #elseBlock><button class="button btn-primary" (click)="addEmployee()">Add</button></ng-template> -->
+  <!-- </form> -->

@@ -28,14 +28,22 @@ namespace Backend.Services
 
         public void Update(string id, Registration registration, FormModel formModel)
         {
+            _repository.Update(id, itemIn: UpdateRegistration(registration, formModel));
+        }
+
+        public Registration UpdateRegistration(Registration registration, FormModel formModel)
+        {
             Registration newRegistration = new Registration();
             foreach (var item in formModel.Form)
             {
-                registration.Questions.Where(x => x.Id == item.QuestionId).Select(a => a.AnswerId = item.AnswerId).FirstOrDefault();
+                registration.Questions.Where(x => x.Id == item.QuestionId)
+                                      .Select(a => a.AnswerId = item.AnswerId)
+                                      .FirstOrDefault();
+
                 newRegistration = registration;
             }
 
-            _repository.Update(id, registration);
+            return newRegistration;
         }
     }
 }
