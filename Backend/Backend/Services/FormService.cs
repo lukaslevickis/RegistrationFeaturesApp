@@ -26,15 +26,15 @@ namespace Backend.Services
             return await _repository.GetByIdAsync(id);
         }
 
-        public void Update(string id, Registration registration, FormModel formModel)
+        public void Update(string id, Registration registration, FeaturesModel formModel)
         {
             _repository.Update(id, itemIn: UpdateRegistration(registration, formModel));
         }
 
-        public Registration UpdateRegistration(Registration registration, FormModel formModel)
+        public Registration UpdateRegistration(Registration registration, FeaturesModel formModel)
         {
             Registration newRegistration = new Registration();
-            foreach (var item in formModel.Form)
+            foreach (var item in formModel.Features)
             {
                 registration.Questions.Where(x => x.Id == item.QuestionId)
                                       .Select(a => a.AnswerId = item.AnswerId)

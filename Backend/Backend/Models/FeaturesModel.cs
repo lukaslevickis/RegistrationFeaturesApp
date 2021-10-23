@@ -3,8 +3,8 @@ using System.Collections.Generic;
 
 namespace Backend.Models
 {
-    public class FormModel
+    public class FeaturesModel
     {
-        public List<QuestionAnswerModel> Form { get; set; }
+        public QuestionAnswerModel[] Features { get; set; }
     }
 }

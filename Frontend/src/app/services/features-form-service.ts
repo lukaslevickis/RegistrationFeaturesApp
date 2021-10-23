@@ -22,7 +22,7 @@ export class FeaturesFormService {
     return this.http.get<FormFeaturesModel>(`${"https://localhost:5002/api/home"}/${id}`);
   }
 
-  public updateForm(id: number, features: FeaturesModel): Observable<FeaturesModel> {
+  public updateForm(id: string, features: FeaturesModel): Observable<FeaturesModel> {
     return this.http.put<FeaturesModel>(`${"https://localhost:5002/api/home"}/${id}`, features);
   }
 }

@@ -38,7 +38,7 @@ namespace Backend.Controllers
 
         // PUT api/values/5
         [HttpPut("{id:length(24)}")]
-        public async Task<IActionResult> Put(string id, [FromBody] FormModel model)
+        public async Task<IActionResult> Put(string id, [FromBody] FeaturesModel model)
         {
             Registration item = await _formService.GetByIdAsync(id);
 
